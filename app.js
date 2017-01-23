@@ -37,7 +37,17 @@ bot.dialog('/help', [
         session.endDialog("Global commands that are available anytime:\n\n* menu - Exits a demo and returns to the menu.\n* goodbye - End this conversation.\n* help - Displays these commands.");
     }
 ]);
-
+bot.dialog('/picture', [
+    function (session) {
+        session.send("You can easily send pictures to a user...");
+        var msg = new builder.Message(session)
+            .attachments([{
+                contentType: "image/jpeg",
+                contentUrl: "http://www.theoldrobots.com/images62/Bender-18.JPG"
+            }]);
+        session.endDialog(msg);
+    }
+]);
 bot.dialog('/add_key', [
     function (session) {
         session.endDialog("To Add CD Key : /add_cd_key@office");
