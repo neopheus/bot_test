@@ -37,3 +37,10 @@ bot.dialog('/help', [
         session.endDialog("Global commands that are available anytime:\n\n* menu - Exits a demo and returns to the menu.\n* goodbye - End this conversation.\n* help - Displays these commands.");
     }
 ]);
+
+bot.dialog('/add_key', [
+    function (session) {
+        session.endDialog("To Add CD Key : /add_cd_key@office");
+        builder.Prompts.confirm(session, "Are you sure you wish to cancel your order?");
+    }
+]);
